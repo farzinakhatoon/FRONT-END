@@ -1,0 +1,71 @@
+.App {
+  text-align: center;
+  margin: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.portfolio-section,
+.summary-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #f9f9f9;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stock-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stock-actions button {
+  background-color: #f44336;
+  margin-left: 10px;
+}
+
+.stock-actions button:hover {
+  background-color: #e53935;
+}

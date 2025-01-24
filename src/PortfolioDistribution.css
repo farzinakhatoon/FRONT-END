@@ -1,0 +1,22 @@
+.portfolio-distribution {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-distribution h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.portfolio-distribution ul {
+  padding: 0;
+  list-style: none;
+}
+
+.portfolio-distribution li {
+  font-size: 1rem;
+  color: #333;
+  margin: 5px 0;
+}

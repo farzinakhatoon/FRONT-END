@@ -1,0 +1,26 @@
+.stock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.stock-item {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stock-name {
+  font-weight: bold;
+}
+
+.stock-actions button {
+  margin-left: 10px;
+  cursor: pointer;
+}
