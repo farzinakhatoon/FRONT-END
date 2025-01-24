@@ -1,6 +1,5 @@
 {
   "name": "portfolio-tracker",
-  "homepage": "https://your-username.github.io/your-repository-name",  // Update as needed
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
