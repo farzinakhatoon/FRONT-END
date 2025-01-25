@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../StockForm.css";
 
-const StockForm = ({ onSubmit, selectedStock }) => {
+const StockForm = ({ onSubmit, selectedStock, setSelectedStock }) => {
   const [ticker, setTicker] = useState("");
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
@@ -13,13 +13,28 @@ const StockForm = ({ onSubmit, selectedStock }) => {
       setName(selectedStock.name);
       setQuantity(selectedStock.quantity);
       setBuyPrice(selectedStock.buyPrice);
+    } else {
+      // Reset form if no stock is selected
+      setTicker("");
+      setName("");
+      setQuantity(1);
+      setBuyPrice(0);
     }
   }, [selectedStock]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const stock = { ticker, name, quantity, buyPrice };
-    onSubmit(stock);
+    onSubmit(stock); // Pass stock data to the parent component
+
+    // After submitting, reset form values
+    setTicker("");
+    setName("");
+    setQuantity(1);
+    setBuyPrice(0);
+
+    // Reset the selected stock (clear any pre-filled values)
+    setSelectedStock(null);
   };
 
   return (
