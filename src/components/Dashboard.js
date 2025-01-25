@@ -12,3 +12,4 @@ function Dashboard({ totalValue, performanceMetrics }) {
 }
 
 export default Dashboard;
+
