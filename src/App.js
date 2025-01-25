@@ -50,7 +50,10 @@ function App() {
         const newStock = await StockService.addStock(stock);
         setStocks([...stocks, newStock]);
       }
-      setSelectedStock(null);
+      setSelectedStock(null); // Reset selected stock after submit
+
+      // After adding or updating a stock, reload the portfolio distribution
+      loadPortfolioDistribution();
     } catch (error) {
       console.error("Error submitting stock:", error);
     }
@@ -62,6 +65,9 @@ function App() {
     try {
       await StockService.deleteStock(ticker);
       setStocks(stocks.filter((stock) => stock.ticker !== ticker));
+
+      // After deleting a stock, reload the portfolio distribution
+      loadPortfolioDistribution();
     } catch (error) {
       console.error("Error deleting stock:", error);
     }
@@ -71,7 +77,11 @@ function App() {
     <div className="App">
       <h1>Portfolio Tracker</h1>
 
-      <StockForm onSubmit={handleSubmit} selectedStock={selectedStock} />
+      <StockForm
+        onSubmit={handleSubmit}
+        selectedStock={selectedStock}
+        setSelectedStock={setSelectedStock} // Pass function to reset the form from StockForm
+      />
 
       <div className="portfolio-section">
         <h3>Your Stocks</h3>
